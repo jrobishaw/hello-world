@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Menu — La Petite Macaron</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header>
+    <div class="nav-wrapper">
+      <a href="index.html" class="logo">La Petite <span>Macaron</span></a>
+      <button class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav>
+        <ul>
+          <li><a href="index.html">About Us</a></li>
+          <li><a href="menu.html" class="active">Menu</a></li>
+          <li><a href="prices.html">Our Prices</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <h1>Our Macaron Menu</h1>
+    <p>Discover our exquisite collection of handcrafted flavors, each inspired by the finest French pâtisserie traditions.</p>
+  </section>
+
+  <!-- ========== CLASSIC FLAVORS ========== -->
+  <section class="section-pad">
+    <div class="container text-center">
+      <h2 class="section-title">Classic Flavors</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Timeless favorites loved by all</p>
+
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-img" style="background: #f8e8ee;">🌹</div>
+          <div class="card-body">
+            <h3>Rose</h3>
+            <p>Delicate rose-water infused shell with a silky rose buttercream filling. A true Parisian classic.</p>
+            <span class="flavor-badge badge-classic">Classic</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-img" style="background: #f5e6d3;">🍦</div>
+          <div class="card-body">
+            <h3>Vanilla Bean</h3>
+            <p>Made with real Madagascar vanilla beans, this macaron offers a rich, creamy, and aromatic experience.</p>
+            <span class="flavor-badge badge-classic">Classic</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-img" style="background: #e8dcd0;">🍫</div>
+          <div class="card-body">
+            <h3>Dark Chocolate</h3>
+            <p>Intense 70% Belgian dark chocolate ganache nestled between perfectly crisp cocoa shells.</p>
+            <span class="flavor-badge badge-rich">Rich</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-img" style="background: #e0f0e0;">🌿</div>
+          <div class="card-body">
+            <h3>Pistachio</h3>
+            <p>Vibrant green shells filled with house-made pistachio paste from premium Sicilian pistachios.</p>
+            <span class="flavor-badge badge-classic">Classic</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-img" style="background: #fff3db;">🍋</div>
+          <div class="card-body">
+            <h3>Lemon</h3>
+            <p>Bright and zesty lemon curd filling with a hint of Amalfi lemon zest for a refreshing burst.</p>
+            <span class="flavor-badge badge-fruity">Fruity</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-img" style="background: #e8d8c8;">☕</div>
+          <div class="card-body">
+            <h3>Café au Lait</h3>
+            <p>Espresso-infused shells with a smooth coffee buttercream — perfect alongside your morning café.</p>
+            <span class="flavor-badge badge-rich">Rich</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FRUITY & SEASONAL ========== -->
+  <section class="section-pad" style="background: var(--pink-lightest);">
+    <div class="container text-center">
+      <h2 class="section-title">Fruity &amp; Seasonal</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Fresh flavors that change with the seasons</p>
+
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-img" style="background: #ffe0e6;">🍓</div>
+          <div class="card-body">
+            <h3>Strawberry</h3>
+            <p>Sweet summer strawberry ganache with freeze-dried strawberry pieces for a burst of freshness.</p>
+            <span class="flavor-badge badge-fruity">Fruity</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-img" style="background: #ffe8d6;">🍑</div>
+          <div class="card-body">
+            <h3>Peach Bellini</h3>
+            <p>Inspired by the famous Venetian cocktail — ripe peach filling with a whisper of sparkling wine.</p>
+            <span class="flavor-badge badge-seasonal">Seasonal</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-img" style="background: #e6d5f5;">🫐</div>
+          <div class="card-body">
+            <h3>Lavender Blueberry</h3>
+            <p>Provence-inspired lavender shells filled with a sweet-tart blueberry compote. Floral and fruity.</p>
+            <span class="flavor-badge badge-seasonal">Seasonal</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-img" style="background: #fce4d6;">🥭</div>
+          <div class="card-body">
+            <h3>Mango Passion Fruit</h3>
+            <p>Tropical and vibrant — tangy passion fruit curd with sweet mango for a sun-kissed treat.</p>
+            <span class="flavor-badge badge-fruity">Fruity</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PREMIUM / SPECIALTY ========== -->
+  <section class="section-pad">
+    <div class="container text-center">
+      <h2 class="section-title">Premium &amp; Specialty</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">For the most discerning palates</p>
+
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-img" style="background: #f0e6d2;">🧈</div>
+          <div class="card-body">
+            <h3>Salted Caramel</h3>
+            <p>Rich, buttery caramel with fleur de sel from Guérande. The perfect balance of sweet and salty.</p>
+            <span class="flavor-badge badge-premium">Premium</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-img" style="background: #d8e8d0;">🍵</div>
+          <div class="card-body">
+            <h3>Matcha</h3>
+            <p>Ceremonial-grade Japanese matcha in both shell and white chocolate ganache filling.</p>
+            <span class="flavor-badge badge-premium">Premium</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-img" style="background: #e8e0d0;">🥥</div>
+          <div class="card-body">
+            <h3>Coconut &amp; Lime</h3>
+            <p>Toasted coconut shell with a tangy lime curd centre — a tropical escape in every bite.</p>
+            <span class="flavor-badge badge-premium">Premium</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-img" style="background: #f5e0e0;">🌸</div>
+          <div class="card-body">
+            <h3>Cherry Blossom</h3>
+            <p>Sakura-inspired with a subtle cherry blossom cream. Delicate, floral, and utterly romantic.</p>
+            <span class="flavor-badge badge-seasonal">Seasonal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="footer-logo">La Petite Macaron</div>
+    <p>&copy; 2026 La Petite Macaron. All rights reserved.</p>
+    <p style="margin-top: 8px;">
+      <a href="index.html">About</a> &middot;
+      <a href="menu.html">Menu</a> &middot;
+      <a href="prices.html">Prices</a> &middot;
+      <a href="contact.html">Contact</a>
+    </p>
+  </footer>
+
+</body>
+</html>
