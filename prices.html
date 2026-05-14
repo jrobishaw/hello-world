@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Prices — La Petite Macaron</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .price-note {
+      max-width: 700px;
+      margin: 0 auto 48px;
+      padding: 24px;
+      background: var(--pink-lightest);
+      border-left: 4px solid var(--pink-dark);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      text-align: left;
+      font-size: .95rem;
+      color: #555;
+    }
+    .price-note strong { color: var(--pink-dark); }
+
+    .custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      margin-top: 32px;
+    }
+    .custom-table thead {
+      background: linear-gradient(135deg, var(--pink-medium), var(--pink-dark));
+      color: var(--white);
+    }
+    .custom-table th,
+    .custom-table td {
+      padding: 16px 24px;
+      text-align: left;
+      font-size: .95rem;
+    }
+    .custom-table th {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      letter-spacing: .5px;
+    }
+    .custom-table tbody tr {
+      border-bottom: 1px solid var(--pink-lightest);
+      transition: background var(--transition);
+    }
+    .custom-table tbody tr:hover {
+      background: var(--pink-lightest);
+    }
+    .custom-table tbody tr:last-child {
+      border-bottom: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header>
+    <div class="nav-wrapper">
+      <a href="index.html" class="logo">La Petite <span>Macaron</span></a>
+      <button class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav>
+        <ul>
+          <li><a href="index.html">About Us</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="prices.html" class="active">Our Prices</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <h1>Our Prices</h1>
+    <p>Beautifully crafted macarons for every occasion — from a small treat to grand celebrations.</p>
+  </section>
+
+  <!-- ========== PRICING TIERS ========== -->
+  <section class="section-pad">
+    <div class="container text-center">
+      <h2 class="section-title">Macaron Boxes</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Choose the perfect box for any occasion</p>
+
+      <div class="pricing-grid">
+        <!-- Petite Box -->
+        <div class="pricing-card">
+          <h3>Petite Box</h3>
+          <div class="price">$12 <small>/ 6 macarons</small></div>
+          <ul>
+            <li>6 classic-flavor macarons</li>
+            <li>Elegant ribbon-tied box</li>
+            <li>Mix and match any classic flavors</li>
+            <li>Perfect for a personal treat</li>
+          </ul>
+          <a href="contact.html" class="btn btn-outline">Order Now</a>
+        </div>
+
+        <!-- Classic Box -->
+        <div class="pricing-card featured">
+          <h3>Classic Box</h3>
+          <div class="price">$22 <small>/ 12 macarons</small></div>
+          <ul>
+            <li>12 macarons — classic &amp; premium flavors</li>
+            <li>Signature gift box with gold foil</li>
+            <li>Personalized flavor selection</li>
+            <li>Ideal for gifting</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Most Popular</a>
+        </div>
+
+        <!-- Grand Box -->
+        <div class="pricing-card">
+          <h3>Grand Box</h3>
+          <div class="price">$40 <small>/ 24 macarons</small></div>
+          <ul>
+            <li>24 macarons — full flavor range</li>
+            <li>Luxury presentation box</li>
+            <li>Includes seasonal &amp; premium flavors</li>
+            <li>Great for parties &amp; gatherings</li>
+          </ul>
+          <a href="contact.html" class="btn btn-outline">Order Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CUSTOM / DECORATION PRICING ========== -->
+  <section class="section-pad" style="background: var(--pink-lightest);">
+    <div class="container text-center">
+      <h2 class="section-title">Custom &amp; Decorated Macarons</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Add a personal touch to your macarons</p>
+
+      <div class="price-note">
+        <strong>How it works:</strong> Our custom macarons start with a base price per macaron depending on the level of decoration. The more intricate the design, the more artistry is involved. All custom orders require a minimum of 24 macarons and at least 5 business days' notice.
+      </div>
+
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Simple Custom</h3>
+          <div class="price">$3 <small>/ per macaron</small></div>
+          <ul>
+            <li>Custom shell color to match your theme</li>
+            <li>Choice of any flavor filling</li>
+            <li>Gold or silver dust finish</li>
+            <li>Minimum order: 24 pieces</li>
+          </ul>
+          <a href="contact.html" class="btn btn-outline">Inquire</a>
+        </div>
+
+        <div class="pricing-card featured">
+          <h3>Decorated</h3>
+          <div class="price">$4.50 <small>/ per macaron</small></div>
+          <ul>
+            <li>Hand-painted designs or patterns</li>
+            <li>Edible printed images or logos</li>
+            <li>Drizzled chocolate or caramel accents</li>
+            <li>Minimum order: 24 pieces</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Most Requested</a>
+        </div>
+
+        <div class="pricing-card">
+          <h3>Luxury Bespoke</h3>
+          <div class="price">$6.50 <small>/ per macaron</small></div>
+          <ul>
+            <li>Intricate hand-piped designs</li>
+            <li>Edible gold leaf &amp; pearl accents</li>
+            <li>Custom shapes and multi-color shells</li>
+            <li>Minimum order: 48 pieces</li>
+          </ul>
+          <a href="contact.html" class="btn btn-outline">Inquire</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BULK & EVENT PRICING ========== -->
+  <section class="section-pad">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-title">Bulk &amp; Event Pricing</h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">Special rates for weddings, corporate events &amp; large orders</p>
+      </div>
+
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>Quantity</th>
+            <th>Classic Flavors</th>
+            <th>Premium Flavors</th>
+            <th>Custom / Decorated</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>50 – 99</strong></td>
+            <td>$1.75 each</td>
+            <td>$2.25 each</td>
+            <td>From $3.00 each</td>
+          </tr>
+          <tr>
+            <td><strong>100 – 199</strong></td>
+            <td>$1.50 each</td>
+            <td>$2.00 each</td>
+            <td>From $2.75 each</td>
+          </tr>
+          <tr>
+            <td><strong>200 – 499</strong></td>
+            <td>$1.25 each</td>
+            <td>$1.75 each</td>
+            <td>From $2.50 each</td>
+          </tr>
+          <tr>
+            <td><strong>500+</strong></td>
+            <td>$1.00 each</td>
+            <td>$1.50 each</td>
+            <td>Contact us for a quote</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="price-note" style="margin-top: 32px;">
+        <strong>Wedding &amp; Event Add-Ons:</strong> Macaron towers (from $50 setup), custom packaging ($2 per box), delivery within the city ($25 flat rate), and on-site assembly ($75). Contact us to discuss your event needs!
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="footer-logo">La Petite Macaron</div>
+    <p>&copy; 2026 La Petite Macaron. All rights reserved.</p>
+    <p style="margin-top: 8px;">
+      <a href="index.html">About</a> &middot;
+      <a href="menu.html">Menu</a> &middot;
+      <a href="prices.html">Prices</a> &middot;
+      <a href="contact.html">Contact</a>
+    </p>
+  </footer>
+
+</body>
+</html>

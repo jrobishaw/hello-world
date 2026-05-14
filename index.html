@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Petite Macaron — Parisian Macaron Bakery</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header>
+    <div class="nav-wrapper">
+      <a href="index.html" class="logo">La Petite <span>Macaron</span></a>
+      <button class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">About Us</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="prices.html">Our Prices</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <h1>Handcrafted Parisian Macarons</h1>
+    <p>Baked with love in the heart of the city, our delicate macarons bring a taste of Paris to every bite. Each one is a tiny work of art — crispy on the outside, perfectly chewy on the inside.</p>
+    <a href="menu.html" class="btn btn-primary">Explore Our Flavors</a>
+  </section>
+
+  <!-- ========== ABOUT US ========== -->
+  <section class="section-pad" id="about">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-title">About Us</h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">A little piece of Paris, just for you</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-img-placeholder">🗼</div>
+        <div class="about-text">
+          <h2>Our Story</h2>
+          <p>La Petite Macaron was born from a passion for French pâtisserie and a dream of sharing the magic of authentic Parisian macarons. Founded in 2018, our bakery draws inspiration from the elegant cafés and patisseries of the Marais district in Paris.</p>
+          <p>Every macaron we create follows traditional French techniques passed down through generations. We use only the finest almond flour, real fruit purées, and premium Belgian chocolate to craft each delicate shell and luscious filling.</p>
+          <p>Our head pâtissière, trained at Le Cordon Bleu in Paris, brings years of expertise and an unwavering commitment to quality. Whether you're celebrating a special occasion or simply treating yourself, every macaron from La Petite Macaron is a small moment of Parisian luxury.</p>
+          <a href="menu.html" class="btn btn-outline" style="margin-top: 12px;">View Our Menu</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== VALUES ========== -->
+  <section class="section-pad" style="background: var(--pink-lightest);">
+    <div class="container text-center">
+      <h2 class="section-title">Why La Petite Macaron?</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">What makes us special</p>
+
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-img">🎨</div>
+          <div class="card-body">
+            <h3>Artisan Craft</h3>
+            <p>Each macaron is handmade in small batches using traditional French techniques, ensuring perfect texture and flavor in every bite.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-img">🌿</div>
+          <div class="card-body">
+            <h3>Premium Ingredients</h3>
+            <p>We source the finest almond flour, real vanilla beans, and seasonal fruits to create flavors that are both authentic and extraordinary.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-img">🎀</div>
+          <div class="card-body">
+            <h3>Beautiful Presentation</h3>
+            <p>From elegant gift boxes to bespoke wedding towers, our macarons are as beautiful to look at as they are to taste.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="footer-logo">La Petite Macaron</div>
+    <p>&copy; 2026 La Petite Macaron. All rights reserved.</p>
+    <p style="margin-top: 8px;">
+      <a href="index.html">About</a> &middot;
+      <a href="menu.html">Menu</a> &middot;
+      <a href="prices.html">Prices</a> &middot;
+      <a href="contact.html">Contact</a>
+    </p>
+  </footer>
+
+</body>
+</html>
