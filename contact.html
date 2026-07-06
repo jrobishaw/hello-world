@@ -3,149 +3,117 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us — La Petite Macaron</title>
+  <title>AquaBalance — Weather Intelligence</title>
   <link rel="stylesheet" href="style.css" />
+  <script defer src="app.js"></script>
 </head>
-<body>
-
-  <!-- ========== HEADER ========== -->
-  <header>
-    <div class="nav-wrapper">
-      <a href="index.html" class="logo">La Petite <span>Macaron</span></a>
-      <button class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Menu">
+<body data-page="weather">
+  <header class="app-header">
+    <div class="container nav-shell">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">◎</span>
+        <span>AquaBalance <small>Pool chemistry and maintenance</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation" data-nav-toggle>
         <span></span><span></span><span></span>
       </button>
-      <nav>
-        <ul>
-          <li><a href="index.html">About Us</a></li>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="prices.html">Our Prices</a></li>
-          <li><a href="contact.html" class="active">Contact Us</a></li>
-        </ul>
+      <nav class="nav" data-nav-menu>
+        <a data-nav-link href="index.html">Dashboard</a>
+        <a data-nav-link href="menu.html">History</a>
+        <a data-nav-link href="prices.html">Equipment</a>
+        <a class="active" data-nav-link href="contact.html">Weather</a>
       </nav>
     </div>
   </header>
 
-  <!-- ========== HERO ========== -->
-  <section class="hero">
-    <h1>Contact Us</h1>
-    <p>We'd love to hear from you! Whether you have a question, want to place an order, or just want to say bonjour.</p>
-  </section>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-card">
+        <span class="eyebrow">Weather and chlorine burn</span>
+        <h1>Predict chlorine loss with forecast and historical weather data.</h1>
+        <p>Pull the next 24 hours from the National Weather Service, paste an Ambient Weather Network export, and use those conditions to estimate how quickly chlorine will burn off.</p>
+      </div>
+    </section>
 
-  <!-- ========== CONTACT ========== -->
-  <section class="section-pad">
-    <div class="container">
-      <div class="contact-grid">
-
-        <!-- Left: Info -->
-        <div class="contact-info">
-          <h3>Get in Touch</h3>
-          <p>Visit our boutique, give us a call, or send us a message. We're always happy to help you find the perfect macarons.</p>
-
-          <div class="info-item">
-            <div class="info-icon">📍</div>
-            <div class="info-text">
-              <strong>Our Boutique</strong>
-              <span>42 Rue de la Pâtisserie<br>Paris-Inspired District, NY 10012</span>
+    <section class="section">
+      <div class="dashboard-grid two-up">
+        <article class="panel">
+          <div class="panel-header">
+            <div class="panel-title">
+              <h2>Forecast location</h2>
+              <p>Enter a latitude and longitude for the NWS hourly forecast.</p>
             </div>
           </div>
 
-          <div class="info-item">
-            <div class="info-icon">📞</div>
-            <div class="info-text">
-              <strong>Phone</strong>
-              <a href="tel:+12125551234">(212) 555-1234</a>
+          <form id="weather-form" class="form-grid">
+            <div class="field span-6">
+              <label for="nwsLatWeather">Latitude</label>
+              <input id="nwsLatWeather" name="nwsLat" type="text" placeholder="33.4484" />
             </div>
-          </div>
-
-          <div class="info-item">
-            <div class="info-icon">✉️</div>
-            <div class="info-text">
-              <strong>Email</strong>
-              <a href="mailto:bonjour@lapetitemacaron.com">bonjour@lapetitemacaron.com</a>
+            <div class="field span-6">
+              <label for="nwsLonWeather">Longitude</label>
+              <input id="nwsLonWeather" name="nwsLon" type="text" placeholder="-112.0740" />
             </div>
-          </div>
-
-          <div class="info-item">
-            <div class="info-icon">🕐</div>
-            <div class="info-text">
-              <strong>Hours</strong>
-              <span>
-                Mon – Fri: 8:00 AM – 7:00 PM<br>
-                Saturday: 9:00 AM – 8:00 PM<br>
-                Sunday: 10:00 AM – 5:00 PM
-              </span>
+            <div class="field span-12">
+              <label for="awnFeedUrlWeather">AWN feed URL</label>
+              <input id="awnFeedUrlWeather" name="awnFeedUrl" type="url" placeholder="Optional feed or export URL" />
             </div>
-          </div>
-
-          <!-- Social Media -->
-          <h3 style="margin-top: 32px;">Follow Us</h3>
-          <p>Stay connected and see our latest creations on social media.</p>
-          <div class="social-links">
-            <a href="https://instagram.com" target="_blank" rel="noopener" title="Instagram">📸</a>
-            <a href="https://facebook.com" target="_blank" rel="noopener" title="Facebook">📘</a>
-            <a href="https://pinterest.com" target="_blank" rel="noopener" title="Pinterest">📌</a>
-            <a href="https://tiktok.com" target="_blank" rel="noopener" title="TikTok">🎵</a>
-            <a href="https://twitter.com" target="_blank" rel="noopener" title="X / Twitter">🐦</a>
-          </div>
-        </div>
-
-        <!-- Right: Form -->
-        <div class="contact-form">
-          <h3>Send Us a Message</h3>
-          <form onsubmit="event.preventDefault(); alert('Thank you! We will get back to you soon. 💕');">
-            <div class="form-group">
-              <label for="name">Your Name</label>
-              <input type="text" id="name" placeholder="e.g. Marie Dupont" required />
+            <div class="field span-12">
+              <label for="weather-message">Status</label>
+              <input id="weather-message" type="text" value="Ready to load weather data." readonly />
             </div>
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" placeholder="e.g. marie@example.com" required />
+            <div class="span-12 action-row">
+              <button class="btn" id="weather-refresh" type="button">Load NWS forecast</button>
             </div>
-            <div class="form-group">
-              <label for="subject">Subject</label>
-              <select id="subject">
-                <option value="general">General Inquiry</option>
-                <option value="order">Place an Order</option>
-                <option value="custom">Custom / Event Order</option>
-                <option value="wholesale">Wholesale Inquiry</option>
-                <option value="feedback">Feedback</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message">Your Message</label>
-              <textarea id="message" placeholder="Tell us how we can help you..." required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
           </form>
+        </article>
+
+        <aside class="panel">
+          <div class="panel-header">
+            <div class="panel-title">
+              <h2>Import AWN weather data</h2>
+              <p>Paste CSV or JSON from Ambient Weather Network or another station export.</p>
+            </div>
+          </div>
+          <div class="field">
+            <label for="awn-paste">Weather export</label>
+            <textarea id="awn-paste" placeholder="timestamp,tempF,windMph,rainIn,cloudCover"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="btn-secondary" id="weather-import-button" type="button">Import samples</button>
+            <button class="btn-ghost" id="weather-clear" type="button">Clear samples</button>
+          </div>
+          <div id="weather-import-output" class="section-gap"></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <article class="panel">
+        <div class="panel-header">
+          <div class="panel-title">
+            <h2>Chlorine loss forecast</h2>
+            <p>Computed from the forecast and calibrated by your historical weather samples.</p>
+          </div>
         </div>
+        <div id="weather-summary"></div>
+        <div id="forecast-list" class="section-gap"></div>
+      </article>
+    </section>
+  </main>
 
+  <footer class="footer">
+    <div class="container footer-card">
+      <div>
+        <strong>AquaBalance</strong>
+        <div class="helper">Use the forecast to anticipate sanitizer demand before it happens.</div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Dashboard</a>
+        <a href="menu.html">History</a>
+        <a href="prices.html">Equipment</a>
       </div>
     </div>
-  </section>
-
-  <!-- ========== MAP PLACEHOLDER ========== -->
-  <section style="background: var(--pink-lightest); padding: 60px 24px;">
-    <div class="container text-center">
-      <h2 class="section-title">Find Us</h2>
-      <div class="divider"></div>
-      <div style="width:100%; height:300px; background: var(--pink-light); border-radius: var(--radius); display:flex; align-items:center; justify-content:center; font-size: 1.1rem; color: #888;">
-        🗺️ Map placeholder — embed your Google Maps iframe here
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== FOOTER ========== -->
-  <footer>
-    <div class="footer-logo">La Petite Macaron</div>
-    <p>&copy; 2026 La Petite Macaron. All rights reserved.</p>
-    <p style="margin-top: 8px;">
-      <a href="index.html">About</a> &middot;
-      <a href="menu.html">Menu</a> &middot;
-      <a href="prices.html">Prices</a> &middot;
-      <a href="contact.html">Contact</a>
-    </p>
   </footer>
-
 </body>
 </html>

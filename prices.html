@@ -3,248 +3,188 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Prices — La Petite Macaron</title>
+  <title>AquaBalance — Equipment Profile</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    .price-note {
-      max-width: 700px;
-      margin: 0 auto 48px;
-      padding: 24px;
-      background: var(--pink-lightest);
-      border-left: 4px solid var(--pink-dark);
-      border-radius: 0 var(--radius) var(--radius) 0;
-      text-align: left;
-      font-size: .95rem;
-      color: #555;
-    }
-    .price-note strong { color: var(--pink-dark); }
-
-    .custom-table {
-      width: 100%;
-      border-collapse: collapse;
-      background: var(--white);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      margin-top: 32px;
-    }
-    .custom-table thead {
-      background: linear-gradient(135deg, var(--pink-medium), var(--pink-dark));
-      color: var(--white);
-    }
-    .custom-table th,
-    .custom-table td {
-      padding: 16px 24px;
-      text-align: left;
-      font-size: .95rem;
-    }
-    .custom-table th {
-      font-family: 'Playfair Display', serif;
-      font-weight: 600;
-      letter-spacing: .5px;
-    }
-    .custom-table tbody tr {
-      border-bottom: 1px solid var(--pink-lightest);
-      transition: background var(--transition);
-    }
-    .custom-table tbody tr:hover {
-      background: var(--pink-lightest);
-    }
-    .custom-table tbody tr:last-child {
-      border-bottom: none;
-    }
-  </style>
+  <script defer src="app.js"></script>
 </head>
-<body>
-
-  <!-- ========== HEADER ========== -->
-  <header>
-    <div class="nav-wrapper">
-      <a href="index.html" class="logo">La Petite <span>Macaron</span></a>
-      <button class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Menu">
+<body data-page="equipment">
+  <header class="app-header">
+    <div class="container nav-shell">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">◎</span>
+        <span>AquaBalance <small>Pool chemistry and maintenance</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation" data-nav-toggle>
         <span></span><span></span><span></span>
       </button>
-      <nav>
-        <ul>
-          <li><a href="index.html">About Us</a></li>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="prices.html" class="active">Our Prices</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-        </ul>
+      <nav class="nav" data-nav-menu>
+        <a data-nav-link href="index.html">Dashboard</a>
+        <a data-nav-link href="menu.html">History</a>
+        <a class="active" data-nav-link href="prices.html">Equipment</a>
+        <a data-nav-link href="contact.html">Weather</a>
       </nav>
     </div>
   </header>
 
-  <!-- ========== HERO ========== -->
-  <section class="hero">
-    <h1>Our Prices</h1>
-    <p>Beautifully crafted macarons for every occasion — from a small treat to grand celebrations.</p>
-  </section>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-card">
+        <span class="eyebrow">Profile and preventative care</span>
+        <h1>Store your pool equipment and setup details.</h1>
+        <p>The app uses this profile to tailor chemistry targets and maintenance recommendations for vinyl, Gunite/plaster, saltwater, cartridge, sand, fixed-speed, and variable-speed setups.</p>
+      </div>
+    </section>
 
-  <!-- ========== PRICING TIERS ========== -->
-  <section class="section-pad">
-    <div class="container text-center">
-      <h2 class="section-title">Macaron Boxes</h2>
-      <div class="divider"></div>
-      <p class="section-subtitle">Choose the perfect box for any occasion</p>
+    <section class="section">
+      <div class="dashboard-grid two-up">
+        <article class="panel">
+          <div class="panel-header">
+            <div class="panel-title">
+              <h2>Pool profile</h2>
+              <p>Save your equipment and operating preferences.</p>
+            </div>
+          </div>
+          <form id="profile-form" class="form-grid">
+            <div class="field span-6">
+              <label for="poolName">Pool name</label>
+              <input id="poolName" name="poolName" type="text" placeholder="Backyard pool" />
+            </div>
+            <div class="field span-6">
+              <label for="poolVolumeGallons">Pool volume</label>
+              <input id="poolVolumeGallons" name="poolVolumeGallons" type="number" min="1000" step="1" placeholder="gallons" required />
+            </div>
+            <div class="field span-3">
+              <label for="poolType">Pool type</label>
+              <select id="poolType" name="poolType">
+                <option value="vinyl">Vinyl</option>
+                <option value="fiberglass">Fiberglass</option>
+                <option value="gunite">Gunite</option>
+                <option value="plaster">Plaster</option>
+              </select>
+            </div>
+            <div class="field span-3">
+              <label for="surfaceType">Surface</label>
+              <select id="surfaceType" name="surfaceType">
+                <option value="vinyl">Vinyl</option>
+                <option value="fiberglass">Fiberglass</option>
+                <option value="gunite">Gunite</option>
+                <option value="plaster">Plaster</option>
+              </select>
+            </div>
+            <div class="field span-3">
+              <label for="sanitationType">Sanitation</label>
+              <select id="sanitationType" name="sanitationType">
+                <option value="chlorine">Chlorine</option>
+                <option value="salt">Saltwater</option>
+              </select>
+            </div>
+            <div class="field span-3">
+              <label for="filterType">Filter</label>
+              <select id="filterType" name="filterType">
+                <option value="cartridge">Cartridge</option>
+                <option value="sand">Sand</option>
+                <option value="dE">D.E.</option>
+              </select>
+            </div>
+            <div class="field span-4">
+              <label for="pumpType">Pump</label>
+              <select id="pumpType" name="pumpType">
+                <option value="fixed-speed">Fixed-speed</option>
+                <option value="variable-speed">Variable-speed</option>
+                <option value="two-speed">Two-speed</option>
+              </select>
+            </div>
+            <div class="field span-4">
+              <label for="heaterType">Heater</label>
+              <select id="heaterType" name="heaterType">
+                <option value="none">None</option>
+                <option value="gas">Gas</option>
+                <option value="heat-pump">Heat pump</option>
+                <option value="solar">Solar</option>
+              </select>
+            </div>
+            <div class="field span-4">
+              <label for="automationLevel">Automation</label>
+              <select id="automationLevel" name="automationLevel">
+                <option value="manual">Manual</option>
+                <option value="basic">Basic controller</option>
+                <option value="smart">Smart controller</option>
+              </select>
+            </div>
+            <div class="field span-4">
+              <label for="chlorineStrength">Liquid chlorine strength</label>
+              <input id="chlorineStrength" name="chlorineStrength" type="number" min="1" step="0.1" placeholder="10" required />
+            </div>
+            <div class="field span-4">
+              <label><input type="checkbox" id="hasSaltCell" name="hasSaltCell" /> Salt cell installed</label>
+            </div>
+            <div class="field span-4">
+              <label><input type="checkbox" id="hasCover" name="hasCover" /> Pool cover</label>
+            </div>
+            <div class="field span-6">
+              <label for="nwsLat">NWS latitude</label>
+              <input id="nwsLat" name="nwsLat" type="text" placeholder="Latitude" />
+            </div>
+            <div class="field span-6">
+              <label for="nwsLon">NWS longitude</label>
+              <input id="nwsLon" name="nwsLon" type="text" placeholder="Longitude" />
+            </div>
+            <div class="field span-6">
+              <label for="awnLabel">AWN station label</label>
+              <input id="awnLabel" name="awnLabel" type="text" placeholder="My backyard station" />
+            </div>
+            <div class="field span-6">
+              <label for="awnFeedUrl">AWN feed URL</label>
+              <input id="awnFeedUrl" name="awnFeedUrl" type="url" placeholder="https://…" />
+            </div>
+            <div class="field span-12">
+              <label for="ownerNotes">Notes</label>
+              <textarea id="ownerNotes" name="ownerNotes" placeholder="Vacuum schedule, automation quirks, heater details, or other reminders."></textarea>
+            </div>
+            <div class="span-12 action-row">
+              <button class="btn" type="submit">Save profile</button>
+              <button class="btn-secondary" id="reset-app" type="button">Reset all stored data</button>
+            </div>
+          </form>
+        </article>
 
-      <div class="pricing-grid">
-        <!-- Petite Box -->
-        <div class="pricing-card">
-          <h3>Petite Box</h3>
-          <div class="price">$16 <small>/ 6 macarons</small></div>
-          <ul>
-            <li>6 classic-flavor macarons</li>
-            <li>Elegant ribbon-tied box</li>
-            <li>Mix and match any classic flavors</li>
-            <li>Perfect for a personal treat</li>
-          </ul>
-          <a href="contact.html" class="btn btn-outline">Order Now</a>
+        <aside class="panel">
+          <div class="panel-header">
+            <div class="panel-title">
+              <h2>Equipment summary</h2>
+              <p>Used to tune targets and maintenance cadence.</p>
+            </div>
+          </div>
+          <div id="equipment-summary"></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <article class="panel">
+        <div class="panel-header">
+          <div class="panel-title">
+            <h2>Preventative maintenance plan</h2>
+            <p>Tasks tailored to the equipment profile you entered.</p>
+          </div>
         </div>
+        <div id="maintenance-plan" class="maintenance-list"></div>
+      </article>
+    </section>
+  </main>
 
-        <!-- Classic Box -->
-        <div class="pricing-card featured">
-          <h3>Classic Box</h3>
-          <div class="price">$28 <small>/ 12 macarons</small></div>
-          <ul>
-            <li>12 macarons — classic &amp; premium flavors</li>
-            <li>Signature gift box with gold foil</li>
-            <li>Personalized flavor selection</li>
-            <li>Ideal for gifting</li>
-          </ul>
-          <a href="contact.html" class="btn btn-primary">Most Popular</a>
-        </div>
-
-        <!-- Grand Box -->
-        <div class="pricing-card">
-          <h3>Grand Box</h3>
-          <div class="price">$40 <small>/ 24 macarons</small></div>
-          <ul>
-            <li>24 macarons — full flavor range</li>
-            <li>Luxury presentation box</li>
-            <li>Includes seasonal &amp; premium flavors</li>
-            <li>Great for parties &amp; gatherings</li>
-          </ul>
-          <a href="contact.html" class="btn btn-outline">Order Now</a>
-        </div>
+  <footer class="footer">
+    <div class="container footer-card">
+      <div>
+        <strong>AquaBalance</strong>
+        <div class="helper">Adjust the profile any time to update recommendations.</div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Dashboard</a>
+        <a href="menu.html">History</a>
+        <a href="contact.html">Weather</a>
       </div>
     </div>
-  </section>
-
-  <!-- ========== CUSTOM / DECORATION PRICING ========== -->
-  <section class="section-pad" style="background: var(--pink-lightest);">
-    <div class="container text-center">
-      <h2 class="section-title">Custom &amp; Decorated Macarons</h2>
-      <div class="divider"></div>
-      <p class="section-subtitle">Add a personal touch to your macarons</p>
-
-      <div class="price-note">
-        <strong>How it works:</strong> Our custom macarons start with a base price per macaron depending on the level of decoration. The more intricate the design, the more artistry is involved. All custom orders require a minimum of 24 macarons and at least 5 business days' notice.
-      </div>
-
-      <div class="pricing-grid">
-        <div class="pricing-card">
-          <h3>Simple Custom</h3>
-          <div class="price">$3 <small>/ per macaron</small></div>
-          <ul>
-            <li>Custom shell color to match your theme</li>
-            <li>Choice of any flavor filling</li>
-            <li>Gold or silver dust finish</li>
-            <li>Minimum order: 24 pieces</li>
-          </ul>
-          <a href="contact.html" class="btn btn-outline">Inquire</a>
-        </div>
-
-        <div class="pricing-card featured">
-          <h3>Decorated</h3>
-          <div class="price">$4.50 <small>/ per macaron</small></div>
-          <ul>
-            <li>Hand-painted designs or patterns</li>
-            <li>Edible printed images or logos</li>
-            <li>Drizzled chocolate or caramel accents</li>
-            <li>Minimum order: 24 pieces</li>
-          </ul>
-          <a href="contact.html" class="btn btn-primary">Most Requested</a>
-        </div>
-
-        <div class="pricing-card">
-          <h3>Luxury Bespoke</h3>
-          <div class="price">$6.50 <small>/ per macaron</small></div>
-          <ul>
-            <li>Intricate hand-piped designs</li>
-            <li>Edible gold leaf &amp; pearl accents</li>
-            <li>Custom shapes and multi-color shells</li>
-            <li>Minimum order: 48 pieces</li>
-          </ul>
-          <a href="contact.html" class="btn btn-outline">Inquire</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== BULK & EVENT PRICING ========== -->
-  <section class="section-pad">
-    <div class="container">
-      <div class="text-center">
-        <h2 class="section-title">Bulk &amp; Event Pricing</h2>
-        <div class="divider"></div>
-        <p class="section-subtitle">Special rates for weddings, corporate events &amp; large orders</p>
-      </div>
-
-      <table class="custom-table">
-        <thead>
-          <tr>
-            <th>Quantity</th>
-            <th>Classic Flavors</th>
-            <th>Premium Flavors</th>
-            <th>Custom / Decorated</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>50 – 99</strong></td>
-            <td>$1.75 each</td>
-            <td>$2.25 each</td>
-            <td>From $3.00 each</td>
-          </tr>
-          <tr>
-            <td><strong>100 – 199</strong></td>
-            <td>$1.50 each</td>
-            <td>$2.00 each</td>
-            <td>From $2.75 each</td>
-          </tr>
-          <tr>
-            <td><strong>200 – 499</strong></td>
-            <td>$1.25 each</td>
-            <td>$1.75 each</td>
-            <td>From $2.50 each</td>
-          </tr>
-          <tr>
-            <td><strong>500+</strong></td>
-            <td>$1.00 each</td>
-            <td>$1.50 each</td>
-            <td>Contact us for a quote</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="price-note" style="margin-top: 32px;">
-        <strong>Wedding &amp; Event Add-Ons:</strong> Macaron towers (from $50 setup), custom packaging ($2 per box), delivery within the city ($25 flat rate), and on-site assembly ($75). Contact us to discuss your event needs!
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== FOOTER ========== -->
-  <footer>
-    <div class="footer-logo">La Petite Macaron</div>
-    <p>&copy; 2026 La Petite Macaron. All rights reserved.</p>
-    <p style="margin-top: 8px;">
-      <a href="index.html">About</a> &middot;
-      <a href="menu.html">Menu</a> &middot;
-      <a href="prices.html">Prices</a> &middot;
-      <a href="contact.html">Contact</a>
-    </p>
   </footer>
-
 </body>
 </html>

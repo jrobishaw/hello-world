@@ -3,104 +3,168 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>La Petite Macaron — Parisian Macaron Bakery</title>
+  <title>AquaBalance — Pool Water Chemistry Coach</title>
   <link rel="stylesheet" href="style.css" />
+  <script defer src="app.js"></script>
 </head>
-<body>
-
-  <!-- ========== HEADER ========== -->
-  <header>
-    <div class="nav-wrapper">
-      <a href="index.html" class="logo">La Petite <span>Macaron</span></a>
-      <button class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Menu">
+<body data-page="dashboard">
+  <header class="app-header">
+    <div class="container nav-shell">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">◎</span>
+        <span>
+          AquaBalance
+          <small>Pool chemistry and maintenance</small>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation" data-nav-toggle>
         <span></span><span></span><span></span>
       </button>
-      <nav>
-        <ul>
-          <li><a href="index.html" class="active">About Us</a></li>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="prices.html">Our Prices</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-        </ul>
+      <nav class="nav" data-nav-menu>
+        <a class="active" data-nav-link href="index.html">Dashboard</a>
+        <a data-nav-link href="menu.html">History</a>
+        <a data-nav-link href="prices.html">Equipment</a>
+        <a data-nav-link href="contact.html">Weather</a>
       </nav>
     </div>
   </header>
 
-  <!-- ========== HERO ========== -->
-  <section class="hero">
-    <h1>Handcrafted Parisian Macarons</h1>
-    <p>Baked with love in the heart of the city, our delicate macarons bring a taste of Paris to every bite. Each one is a tiny work of art — crispy on the outside, perfectly chewy on the inside.</p>
-    <a href="menu.html" class="btn btn-primary">Explore Our Flavors</a>
-  </section>
-
-  <!-- ========== ABOUT US ========== -->
-  <section class="section-pad" id="about">
-    <div class="container">
-      <div class="text-center">
-        <h2 class="section-title">About Us</h2>
-        <div class="divider"></div>
-        <p class="section-subtitle">A little piece of Paris, just for you</p>
-      </div>
-
-      <div class="about-grid">
-        <div class="about-img-placeholder">🗼</div>
-        <div class="about-text">
-          <h2>Our Story</h2>
-          <p>La Petite Macaron was born from a passion for French pâtisserie and a dream of sharing the magic of authentic Parisian macarons. Founded in 2018, our bakery draws inspiration from the elegant cafés and patisseries of the Marais district in Paris.</p>
-          <p>Every macaron we create follows traditional French techniques passed down through generations. We use only the finest almond flour, real fruit purées, and premium Belgian chocolate to craft each delicate shell and luscious filling.</p>
-          <p>Our head pâtissière, trained at Le Cordon Bleu in Paris, brings years of expertise and an unwavering commitment to quality. Whether you're celebrating a special occasion or simply treating yourself, every macaron from La Petite Macaron is a small moment of Parisian luxury.</p>
-          <a href="menu.html" class="btn btn-outline" style="margin-top: 12px;">View Our Menu</a>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-card">
+        <span class="eyebrow">Pool chemistry coach</span>
+        <h1>Balance water, schedule maintenance, and forecast chlorine demand.</h1>
+        <p>Enter your latest water test, keep a running log of pool chemistry, and get dosing guidance based on your pool profile, equipment, and weather conditions.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#chemistry-form">Enter water test</a>
+          <a class="btn-secondary" href="menu.html">Review history</a>
         </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="dashboard-grid two-up">
+        <article class="panel">
+          <div class="panel-header">
+            <div class="panel-title">
+              <h2>Latest water test</h2>
+              <p>Free chlorine, pH, alkalinity, calcium hardness, CYA, and water temperature.</p>
+            </div>
+            <span class="badge neutral">Save to history</span>
+          </div>
+
+          <form id="chemistry-form" class="form-grid">
+            <div class="field span-12">
+              <label for="test-date">Test date</label>
+              <input id="test-date" name="date" type="datetime-local" />
+            </div>
+            <div class="field span-3">
+              <label for="free-chlorine">Free chlorine</label>
+              <input id="free-chlorine" name="freeChlorine" type="number" step="0.1" min="0" placeholder="ppm" required />
+            </div>
+            <div class="field span-3">
+              <label for="combined-chlorine">Combined chlorine</label>
+              <input id="combined-chlorine" name="combinedChlorine" type="number" step="0.1" min="0" placeholder="ppm" />
+            </div>
+            <div class="field span-3">
+              <label for="total-chlorine">Total chlorine</label>
+              <input id="total-chlorine" name="totalChlorine" type="number" step="0.1" min="0" placeholder="ppm" />
+            </div>
+            <div class="field span-3">
+              <label for="pH">pH</label>
+              <input id="pH" name="pH" type="number" step="0.01" min="6" max="8.5" placeholder="7.4" required />
+            </div>
+            <div class="field span-3">
+              <label for="total-alkalinity">Total alkalinity</label>
+              <input id="total-alkalinity" name="totalAlkalinity" type="number" step="1" min="0" placeholder="ppm" required />
+            </div>
+            <div class="field span-3">
+              <label for="calcium-hardness">Calcium hardness</label>
+              <input id="calcium-hardness" name="calciumHardness" type="number" step="1" min="0" placeholder="ppm" required />
+            </div>
+            <div class="field span-3">
+              <label for="cya">CYA</label>
+              <input id="cya" name="cya" type="number" step="1" min="0" placeholder="ppm" required />
+            </div>
+            <div class="field span-3">
+              <label for="water-temp">Water temperature</label>
+              <input id="water-temp" name="waterTemp" type="number" step="0.1" min="32" max="100" placeholder="°F" />
+            </div>
+            <div class="field span-12">
+              <label for="reading-notes">Notes</label>
+              <textarea id="reading-notes" name="notes" placeholder="Cloudy water, recent rain, bather load, algae concerns, etc."></textarea>
+            </div>
+            <div class="span-12 action-row">
+              <button class="btn" type="submit">Save reading and analyze</button>
+            </div>
+          </form>
+        </article>
+
+        <aside class="panel">
+          <div class="panel-header">
+            <div class="panel-title">
+              <h2>Current profile</h2>
+              <p>Equipment and pool setup used for recommendations.</p>
+            </div>
+          </div>
+          <div id="profile-brief" class="stack"></div>
+          <div class="section-gap">
+            <a class="btn-ghost" href="prices.html">Edit equipment profile</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="dashboard-grid two-up">
+        <article class="panel">
+          <div class="panel-header">
+            <div class="panel-title">
+              <h2>Water balance snapshot</h2>
+              <p>How each reading compares with the target range.</p>
+            </div>
+          </div>
+          <div id="water-snapshot"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-header">
+            <div class="panel-title">
+              <h2>Recommended additions</h2>
+              <p>What to add, adjust, or monitor next.</p>
+            </div>
+          </div>
+          <div id="recommendations-list" class="recommendation-list"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <article class="panel">
+        <div class="panel-header">
+          <div class="panel-title">
+            <h2>Recent test results</h2>
+            <p>Most recent entries are stored locally in your browser.</p>
+          </div>
+        </div>
+        <div id="recent-tests"></div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-card">
+      <div>
+        <strong>AquaBalance</strong>
+        <div class="helper">Pool water chemistry, equipment, and maintenance planning.</div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Dashboard</a>
+        <a href="menu.html">History</a>
+        <a href="prices.html">Equipment</a>
+        <a href="contact.html">Weather</a>
       </div>
     </div>
-  </section>
-
-  <!-- ========== VALUES ========== -->
-  <section class="section-pad" style="background: var(--pink-lightest);">
-    <div class="container text-center">
-      <h2 class="section-title">Why La Petite Macaron?</h2>
-      <div class="divider"></div>
-      <p class="section-subtitle">What makes us special</p>
-
-      <div class="card-grid">
-        <div class="card">
-          <div class="card-img">🎨</div>
-          <div class="card-body">
-            <h3>Artisan Craft</h3>
-            <p>Each macaron is handmade in small batches using traditional French techniques, ensuring perfect texture and flavor in every bite.</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-img">🌿</div>
-          <div class="card-body">
-            <h3>Premium Ingredients</h3>
-            <p>We source the finest almond flour, real vanilla beans, and seasonal fruits to create flavors that are both authentic and extraordinary.</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-img">🎀</div>
-          <div class="card-body">
-            <h3>Beautiful Presentation</h3>
-            <p>From elegant gift boxes to bespoke wedding towers, our macarons are as beautiful to look at as they are to taste.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== FOOTER ========== -->
-  <footer>
-    <div class="footer-logo">La Petite Macaron</div>
-    <p>&copy; 2026 La Petite Macaron. All rights reserved.</p>
-    <p style="margin-top: 8px;">
-      <a href="index.html">About</a> &middot;
-      <a href="menu.html">Menu</a> &middot;
-      <a href="prices.html">Prices</a> &middot;
-      <a href="contact.html">Contact</a>
-    </p>
   </footer>
-
 </body>
 </html>
